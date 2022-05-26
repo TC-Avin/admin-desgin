@@ -5,9 +5,9 @@ import qrcode from "../../../../../images/qr.png";
 import logoText from "../../../../../images/logo-text.png";
 import PageTitle from "../../../../layouts/PageTitle";
 
-const Invoice = () => {
+const Invoice = (props) => {
   return (
-    <Fragment>
+    <Fragment className={props.className}>
       <PageTitle activeMenu="Blank" motherMenu="Layout" />
       <div className="row">
         <div className="col-lg-12">

@@ -5,6 +5,7 @@ import loadable from "@loadable/component";
 import pMinDelay from "p-min-delay";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import "../../../css/style.css";
 import { Dropdown, Tab, Nav, Modal } from "react-bootstrap";
 import "react-calendar/dist/Calendar.css";
 
@@ -68,13 +69,13 @@ const CompanyManagement = () => {
 
 	// Active data
 	const chageData = (frist, sec) => {
-		for (var i = 0; i < data.length; ++i) {
-			if (i >= frist && i < sec) {
-				data[i].classList.remove("d-none");
-			} else {
-				data[i].classList.add("d-none");
-			}
-		}
+		// for (var i = 0; i < data.length; ++i) {
+		// 	if (i >= frist && i < sec) {
+		// 		data[i].classList.remove("d-none");
+		// 	} else {
+		// 		data[i].classList.add("d-none");
+		// 	}
+		// }
 	};
 	 // use effect
 	 useEffect(() => {
@@ -642,11 +643,12 @@ const CompanyManagement = () => {
 										</table>
 										<div className="d-sm-flex text-center justify-content-between align-items-center mt-3">
 											<div className="dataTables_info">
-												Showing {activePag.current * sort + 1} to{" "}
+												{/* Showing {activePag.current * sort + 1} to{" "}
 												{data.length > (activePag.current + 1) * sort
 													? (activePag.current + 1) * sort
 													: data.length}{" "}
-												of {data.length} entries
+												of {data.length} entries */}
+												Showing 1 to 5
 											</div>
 											<div
 												className="dataTables_paginate paging_simple_numbers"
@@ -654,11 +656,11 @@ const CompanyManagement = () => {
 											>
 												<Link
 													className="paginate_button previous disabled"
-													to="/user-management"
-													onClick={() =>
-													   activePag.current > 0 &&
-													   onClick(activePag.current - 1)
-													}
+													// to="/user-management"
+													// onClick={() =>
+													//    activePag.current > 0 &&
+													//    onClick(activePag.current - 1)
+													// }
 												 >
 													<i className="fa fa-angle-double-left" aria-hidden="true"></i>
 												</Link>
@@ -666,11 +668,11 @@ const CompanyManagement = () => {
 													{paggination.map((number, i) => (
 													   <Link
 														  key={i}
-														  to="/user-management"
+														//   to="/user-management"
 														  className={`paginate_button  ${
 															 activePag.current === i ? "current" : ""
 														  } `}
-														  onClick={() => onClick(i)}
+														//   onClick={() => onClick(i)}
 													   >
 														  {number}
 													   </Link>
@@ -679,11 +681,11 @@ const CompanyManagement = () => {
 
 												<Link
 													className="paginate_button next"
-													to="/user-management"
-													onClick={() =>
-													   activePag.current + 1 < paggination.length &&
-													   onClick(activePag.current + 1)
-													}
+													// to="/user-management"
+													// onClick={() =>
+													//    activePag.current + 1 < paggination.length &&
+													//    onClick(activePag.current + 1)
+													// }
 												>
 													<i className="fa fa-angle-double-right" aria-hidden="true"></i>
 												</Link>
@@ -734,7 +736,7 @@ const CompanyManagement = () => {
 													<td>
 														<div>
 														<h5 class="badge light badge-success">
-															<i class="fa fa-circle text-success me-1"></i>Premium
+															<i class="fa fa-circle text-success me-1"></i>Personalized
 															</h5>
 														</div>
 													</td>
@@ -785,7 +787,7 @@ const CompanyManagement = () => {
 													<td>
 														<div>
 														<h5 class="badge light badge-success">
-															<i class="fa fa-circle text-success me-1"></i>Premium
+															<i class="fa fa-circle text-success me-1"></i>Personalized
 															</h5>
 														</div>
 													</td>
@@ -836,7 +838,7 @@ const CompanyManagement = () => {
 													<td>
 														<div>
 														<h5 class="badge light badge-success">
-															<i class="fa fa-circle text-success me-1"></i>Premium
+															<i class="fa fa-circle text-success me-1"></i>Personalized
 															</h5>
 														</div>
 													</td>
@@ -887,7 +889,7 @@ const CompanyManagement = () => {
 													<td>
 														<div>
 														<h5 class="badge light badge-success">
-															<i class="fa fa-circle text-success me-1"></i>Premium
+															<i class="fa fa-circle text-success me-1"></i>Personalized
 															</h5>
 														</div>
 													</td>
@@ -922,11 +924,12 @@ const CompanyManagement = () => {
 										</table>
 										<div className="d-sm-flex text-center justify-content-between align-items-center mt-3">
 											<div className="dataTables_info">
-												Showing {activePag.current * sort + 1} to{" "}
+												{/* Showing {activePag.current * sort + 1} to{" "}
 												{data.length > (activePag.current + 1) * sort
 													? (activePag.current + 1) * sort
 													: data.length}{" "}
-												of {data.length} entries
+												of {data.length} entries */}
+												Showing 1 to 5
 											</div>
 											<div
 												className="dataTables_paginate paging_simple_numbers"
@@ -934,11 +937,11 @@ const CompanyManagement = () => {
 											>
 												<Link
 													className="paginate_button previous disabled"
-													to="/user-management"
-													onClick={() =>
-													   activePag.current > 0 &&
-													   onClick(activePag.current - 1)
-													}
+													// to="/user-management"
+													// onClick={() =>
+													//    activePag.current > 0 &&
+													//    onClick(activePag.current - 1)
+													// }
 												 >
 													<i className="fa fa-angle-double-left" aria-hidden="true"></i>
 												</Link>
@@ -946,11 +949,11 @@ const CompanyManagement = () => {
 													{paggination.map((number, i) => (
 													   <Link
 														  key={i}
-														  to="/user-management"
+														//   to="/user-management"
 														  className={`paginate_button  ${
 															 activePag.current === i ? "current" : ""
 														  } `}
-														  onClick={() => onClick(i)}
+														//   onClick={() => onClick(i)}
 													   >
 														  {number}
 													   </Link>
@@ -959,11 +962,11 @@ const CompanyManagement = () => {
 
 												<Link
 													className="paginate_button next"
-													to="/user-management"
-													onClick={() =>
-													   activePag.current + 1 < paggination.length &&
-													   onClick(activePag.current + 1)
-													}
+													// to="/user-management"
+													// onClick={() =>
+													//    activePag.current + 1 < paggination.length &&
+													//    onClick(activePag.current + 1)
+													// }
 												>
 													<i className="fa fa-angle-double-right" aria-hidden="true"></i>
 												</Link>
@@ -1045,15 +1048,15 @@ const CompanyManagement = () => {
 						</div>
 					</div>
 				</Modal>
-                <Modal className="modal  fade asfdasd"  show={addCompanyModal} onHide={setaddCompanyModal} >
+                <Modal className="modal-addCompany"  show={addCompanyModal} onHide={setaddCompanyModal} >
 					<div className="" role="document">
 						<div className="">
-							<form >
+							<form>
 								<div className="modal-header">
 									<h4 className="modal-title fs-20">Add Company</h4>
 									<button type="button" className="btn-close" onClick={()=> setaddCompanyModal(false)} data-dismiss="modal"></button>
 								</div>
-								<div className="modal-body" style={{padding: 0}}>
+								<div className="modal-body"  style={{padding: 0}}>
 									<i className="flaticon-cancel-12 close"></i>
 									<div className="card" style={{boxShadow: 'none'}}>
                                        
@@ -1076,10 +1079,10 @@ const CompanyManagement = () => {
                                                 handleBlur,
                                                 handleSubmit,
                                                 isSubmitting,
-                                            }) => (
-                                                <form onSubmit={handleSubmit}>
+                                            }) => (<>
+                                                <form onSubmit={handleSubmit} className="addcompany-form">
 													<div
-                                                    className={`form-group mb-3 ${
+                                                    className={`form-group mb-3 addcompany-formgroup ${
                                                     values.subscription
                                                         ? errors.subscription
                                                         ? "is-invalid"
@@ -1142,51 +1145,9 @@ const CompanyManagement = () => {
 													{/* {console.log(values.subscription,"values.subscription")} */}
                                                 </div>
 
-												{/* {["Free" , "Premium" , "Personalized"].includes(values.subscription) &&
-                                                <div
-                                                    className={`form-group mb-3 ${
-                                                    values.username
-                                                        ? errors.username
-                                                        ? "is-invalid"
-                                                        : "is-valid"
-                                                        : ""
-                                                    }`}
-                                                >
-                                                    <label className="text-label">Username</label>
-                                                    <div className="input-group">
-                                                        <span className="input-group-text">
-                                                        <i className="fa fa-user" />{" "}
-                                                        </span>
-                                                    <input
-                                                        type="text"
-                                                        className="form-control"
-                                                        id="val-username1"
-                                                        placeholder="Enter a username.."
-                                                        name="username"
-                                                        onChange={handleChange}
-                                                        onBlur={handleBlur}
-                                                        value={values.username}
-                                                    />
-                                                    <div
-                                                        id="val-username1-error"
-                                                        className="invalid-feedback animated fadeInUp"
-                                                        style={{ display: "block" }}
-                                                    >
-                                                        {errors.username && errors.username}
-                                                    </div>
-
-                                                    <div
-                                                        id="val-username1-error"
-                                                        className="invalid-feedback animated fadeInUp"
-                                                        style={{ display: "block" }}
-                                                    />
-                                                    </div>
-                                                </div>
-												} */}
-
 												{["Free" , "Premium" , "Personalized"].includes(values.subscription) &&
                                                 <div
-                                                    className={`form-group mb-3 ${
+                                                    className={`form-group mb-3 addcompany-formgroup ${
                                                     values.email
                                                         ? errors.email
                                                         ? "is-invalid"
@@ -1228,7 +1189,7 @@ const CompanyManagement = () => {
 
 												{["Free" , "Premium" , "Personalized"].includes(values.subscription) &&
                                                 <div
-                                                    className={`form-group mb-3 ${
+                                                    className={`form-group mb-3 addcompany-formgroup ${
                                                     values.companyname
                                                         ? errors.companyname
                                                         ? "is-invalid"
@@ -1270,7 +1231,7 @@ const CompanyManagement = () => {
 
 												{(values.subscription === "Personalized") &&
                                                 <div
-                                                    className={`form-group mb-3 ${
+                                                    className={`form-group mb-3 addcompany-formgroup ${
                                                     values.credits
                                                         ? errors.credits
                                                         ? "is-invalid"
@@ -1312,7 +1273,7 @@ const CompanyManagement = () => {
 
 												{(values.subscription === "Personalized") &&
 													<div
-														className={`form-group mb-3 ${
+														className={`form-group mb-3 addcompany-formgroup ${
 														values.perCreditCost
 															? errors.perCreditCost
 															? "is-invalid"
@@ -1354,7 +1315,7 @@ const CompanyManagement = () => {
 
 												{(values.subscription === "Personalized") &&
 												<div
-                                                    className={`form-group mb-3 ${
+                                                    className={`form-group mb-3 addcompany-formgroup ${
                                                     values.cost
                                                         ? errors.cost
                                                         ? "is-invalid"
@@ -1396,7 +1357,7 @@ const CompanyManagement = () => {
 
 											    {(values.subscription === "Personalized") &&
 												<div
-                                                    className={`form-group mb-3 ${
+                                                    className={`form-group mb-3 addcompany-formgroup ${
                                                     values.teamMember
                                                         ? errors.teamMember
                                                         ? "is-invalid"
@@ -1438,7 +1399,7 @@ const CompanyManagement = () => {
 
 												{(values.subscription === "Personalized") &&
 												<div
-                                                    className={`form-group mb-3 ${
+                                                    className={`form-group mb-3 addcompany-formgroup ${
                                                     values.teamMemberCost
                                                         ? errors.teamMemberCost
                                                         ? "is-invalid"
@@ -1481,7 +1442,7 @@ const CompanyManagement = () => {
 
 												{["Premium" , "Personalized"].includes(values.subscription)  &&
 												<div
-                                                    className={`form-group mb-3 ${
+                                                    className={`form-group mb-3 addcompany-formgroup ${
                                                     values.billing
                                                         ? errors.billing
                                                         ? "is-invalid"
@@ -1542,7 +1503,7 @@ const CompanyManagement = () => {
 
 												{(values.subscription === "Premium") &&
                                                 <div
-                                                    className={`form-group mb-3 ${
+                                                    className={`form-group mb-3 addcompany-formgroup ${
                                                     values.subscription
                                                         ? errors.subscription
                                                         ? "is-invalid"
@@ -1599,7 +1560,7 @@ const CompanyManagement = () => {
 
 												{(values.subscription === "Personalized") &&
 												<div
-                                                    className={`form-group mb-3 ${
+                                                    className={`form-group mb-3 addcompany-formgroup ${
                                                     values.subscriptionPackageCost
                                                         ? errors.subscriptionPackageCost
                                                         ? "is-invalid"
@@ -1641,7 +1602,7 @@ const CompanyManagement = () => {
 
 												{(values.subscription === "Personalized") &&
 												<div
-                                                    className={`form-group mb-3 ${
+                                                    className={`form-group mb-3 addcompany-formgroup ${
                                                     values.totalPaybleAmount
                                                         ? errors.totalPaybleAmount
                                                         ? "is-invalid"
@@ -1683,7 +1644,7 @@ const CompanyManagement = () => {
 
 												{(values.subscription === "Personalized")  &&
 												<div
-                                                    className={`form-group mb-3 ${
+                                                    className={`form-group mb-3 addcompany-formgroup ${
                                                     values.Discount
                                                         ? errors.Discount
                                                         ? "is-invalid"
@@ -1757,33 +1718,55 @@ const CompanyManagement = () => {
 												}
 
 												{(values.subscription === "Personalized")  &&	
-												
-													<div className="basic-form">
+													<>
+													<div className="addcompany-formgroup w-100  m-2">
 														<form onSubmit={(e) => e.preventDefault()}>
-														<div className="form-group mb-0">
-															<label className="radio-inline me-3">
-															<input type="radio" name="optradio" /> Download Invoice
+														<div className="form-group mb-0  d-flex justify-content-around">
+															<label className="radio-inline me-3 d-flex align-items-center">
+															<input type="radio" name="optradio" style={{width:"30px", height:"20px"}}/>
+															 	<span style={{fontSize:"18px"}}>Download Invoice</span>
 															</label>
-															<label className="radio-inline me-3">
-															<input type="radio" name="optradio" /> Send Invoice
+															<label className="radio-inline me-3 d-flex align-items-center">
+															<input type="radio" name="optradio" style={{width:"30px", height:"20px"}}/> 
+																<span style={{fontSize:"18px"}}>Send Invoice</span>
 															</label>
 														</div>
 														</form>
 													</div>
+													{/* <div className='addcompany-formgroup d-flex justify-content-center m-2'>
+														<form onSubmit={(e) => e.preventDefault()}>
+														<div className="form-group mb-0">
+															<label className="radio-inline me-3">
+															<input type="radio" name="optradio" style={{width:"30px", height:"20px"}}/> 
+																<span style={{fontSize:"18px"}}>Send Invoice</span>
+															</label>
+														</div>
+														</form>
+													</div> */}
+													</>
 												}
 
-                                                <button
-                                                    type="submit"
-                                                    className="btn me-3 btn-primary"
-                                                    disabled={isSubmitting}
-                                                >
-                                                    Submit
-                                                </button>
-                                                <button type="button" onClick={()=> setaddCompanyModal(false)} className="btn btn-light">
-                                                    cancel
-                                                </button>
+											
+
                                                 </form>
+												{["Free", "Premium", "Personalized"].includes(values.subscription)  && 
+												<div className=' d-flex justify-content-around'>
+													<button
+														type="submit"
+														className="btn me-3 btn-primary"
+														disabled={isSubmitting}
+													>
+														Submit
+													</button>
+												
+													<button type="button" onClick={()=> setaddCompanyModal(false)} className="btn btn-light">
+														cancel
+													</button>
+												</div>
+												}
+												</>
                                             )}
+												
                                             </Formik>
                                         </div>
                                         </div>

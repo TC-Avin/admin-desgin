@@ -10,6 +10,7 @@ import "react-calendar/dist/Calendar.css";
 
 import bg1 from '../../../images/big/img1.jpg';
 import Invoice from '../AppsMenu/Shop/Invoice/Invoice';
+import "../../../css/style.css"
 
 ///Import
 
@@ -165,7 +166,7 @@ const CompanyProfile = () => {
 										<Nav.Link className="nav-link" eventKey="Team">Team Member</Nav.Link>
 									</Nav.Item>
 									<Nav.Item as="li" className="nav-item">
-										<Nav.Link className="nav-link" eventKey="Team">Activity Log</Nav.Link>
+										<Nav.Link className="nav-link" eventKey="Activity">Activity Log</Nav.Link>
 									</Nav.Item>
 									
 								</Nav>
@@ -400,7 +401,7 @@ const CompanyProfile = () => {
 															Paid
 														</span>
 													</td>
-													<td><Link onClick={()=> setResolvedModal(true)} className="btn-link">View Details</Link></td>
+													<td><Link onClick={()=> setResolvedModal(true)} className="btn-link">View invoice</Link></td>
                                                     <td><DropdownAction Action={["Mark as paid","Download"]}/> </td>
 													
 												</tr>
@@ -441,7 +442,7 @@ const CompanyProfile = () => {
 															Unpaid
 														</span>
 													</td>
-													<td><Link onClick={()=> setResolvedModal(true)} className="btn-link">View Details</Link></td>
+													<td><Link onClick={()=> setResolvedModal(true)} className="btn-link">View invoice</Link></td>
                                                     {/* <td><DropdownAction /> </td> */}
 													<td><DropdownAction Action={["Mark as paid","Download"]}/> </td>
 													
@@ -483,7 +484,7 @@ const CompanyProfile = () => {
 															Paid
 														</span>
 													</td>
-													<td><Link onClick={()=> setResolvedModal(true)} className="btn-link">View Details</Link></td>
+													<td><Link onClick={()=> setResolvedModal(true)} className="btn-link">View invoice</Link></td>
                                                     {/* <td><DropdownAction /> </td> */}
 													<td><DropdownAction Action={["Mark as paid","Download"]}/> </td>
 													
@@ -525,7 +526,7 @@ const CompanyProfile = () => {
 															Unpaid
 														</span>
 													</td>
-													<td><Link onClick={()=> setResolvedModal(true)} className="btn-link">View Details</Link></td>
+													<td><Link onClick={()=> setResolvedModal(true)} className="btn-link">View invoice</Link></td>
                                                     {/* <td><DropdownAction /> </td> */}
 													<td><DropdownAction Action={["Mark as paid","Download"]}/> </td>
 												
@@ -536,11 +537,12 @@ const CompanyProfile = () => {
 										</table>
 										<div className="d-sm-flex text-center justify-content-between align-items-center mt-3">
 											<div className="dataTables_info">
-												Showing {activePag.current * sort + 1} to{" "}
+												{/* Showing {activePag.current * sort + 1} to{" "}
 												{data.length > (activePag.current + 1) * sort
 													? (activePag.current + 1) * sort
 													: data.length}{" "}
-												of {data.length} entries
+												of {data.length} entries */}
+												Showing 1 to 5
 											</div>
 											<div
 												className="dataTables_paginate paging_simple_numbers"
@@ -548,11 +550,11 @@ const CompanyProfile = () => {
 											>
 												<Link
 													className="paginate_button previous disabled"
-													to="/ticket-management"
-													onClick={() =>
-													   activePag.current > 0 &&
-													   onClick(activePag.current - 1)
-													}
+													// to="/ticket-management"
+													// onClick={() =>
+													//    activePag.current > 0 &&
+													//    onClick(activePag.current - 1)
+													// }
 												 >
 													<i className="fa fa-angle-double-left" aria-hidden="true"></i>
 												</Link>
@@ -560,11 +562,11 @@ const CompanyProfile = () => {
 													{paggination.map((number, i) => (
 													   <Link
 														  key={i}
-														  to="/ticket-management"
+														//   to="/ticket-management"
 														  className={`paginate_button  ${
 															 activePag.current === i ? "current" : ""
 														  } `}
-														  onClick={() => onClick(i)}
+														//   onClick={() => onClick(i)}
 													   >
 														  {number}
 													   </Link>
@@ -573,11 +575,11 @@ const CompanyProfile = () => {
 
 												<Link
 													className="paginate_button next"
-													to="/ticket-management"
-													onClick={() =>
-													   activePag.current + 1 < paggination.length &&
-													   onClick(activePag.current + 1)
-													}
+													// to="/ticket-management"
+													// onClick={() =>
+													//    activePag.current + 1 < paggination.length &&
+													//    onClick(activePag.current + 1)
+													// }
 												>
 													<i className="fa fa-angle-double-right" aria-hidden="true"></i>
 												</Link>
@@ -1289,14 +1291,254 @@ const CompanyProfile = () => {
 									</div>
 								</div>
 							</Tab.Pane>
+
+							<Tab.Pane eventKey="Activity">
+                            <div className="table-responsive">
+									<div id="example2_wrapper" className="dataTables_wrapper no-footer">
+										<table
+											id="example2"
+											className="table card-table default-table display mb-4 dataTablesCard dataTable no-footer"
+										>
+											<thead>
+												<tr role="row">
+													
+													<th className="sorting_asc">Activity</th>
+													{/* <th className="sorting">Available Credits</th>
+													<th className="sorting">Date of Creation</th>
+													<th className="sorting">Credit Expiration</th>
+													<th className="sorting">Action</th> */}
+	
+												</tr>
+											</thead>
+											<tbody>
+												<tr role="row" className="odd">
+													<td>
+														<ul>
+														<li>
+														<div className="timeline-badge primary" />
+														<Link
+														className="timeline-panel c-pointer text-muted"
+														to="#"
+														>
+														<span>10 minutes ago</span>
+														<h6 className="mb-0">
+															Youtube, a video-sharing website, goes live{" "}
+															<strong className="text-primary">$500</strong>.
+														</h6>
+														</Link>
+														</li>
+														</ul>
+													</td>
+												</tr>
+												<tr role="row" className="odd">
+													<td>
+														<ul>
+														<li>
+														<div className="timeline-badge info"></div>
+														<Link
+														className="timeline-panel c-pointer text-muted"
+														to="#"
+														>
+														<span>20 minutes ago</span>
+														<h6 className="mb-0">
+															New order placed{" "}
+															<strong className="text-info">#XF-2356.</strong>
+														</h6>
+														<p className="mb-0">
+															Quisque a consequat ante Sit amet magna at
+															volutapt...
+														</p>
+														</Link>
+														</li>
+														</ul>
+													</td>
+												</tr>
+												<tr role="row" className="odd">
+													<td>
+														<ul className="timeline">
+														<li>
+														<div className="timeline-badge danger"></div>
+														<Link className="timeline-panel c-pointer text-muted" to="#">
+															<span>30 minutes ago</span>
+															<h6 className="mb-0">
+																john just buy your product{" "}
+																<strong className="text-warning">Sell $250</strong>
+															</h6>
+														</Link>
+														</li>
+														</ul>
+													</td>
+												</tr>
+												<tr role="row" className="odd">
+													<td>
+														<ul className="timeline">
+														<li>
+														<div className="timeline-badge success"></div>
+														<Link  className="timeline-panel c-pointer text-muted" to="#">
+															<span>15 minutes ago</span>
+															<h6 className="mb-0">
+																StumbleUpon is acquired by eBay.{" "}
+															</h6>
+														</Link>
+														</li>
+														</ul>
+													</td>
+												</tr>
+												<tr role="row" className="odd">
+													<td>
+														<ul className="timeline">
+														<li>
+															<div className="timeline-badge warning"></div>
+															<Link className="timeline-panel c-pointer text-muted" to="#">
+																<span>20 minutes ago</span>
+																<h6 className="mb-0">Mashable, a news website and blog, goes live.</h6>
+															</Link>
+														</li>
+														</ul>
+													</td>
+												</tr>
+												<tr role="row" className="odd">
+													<td>
+														<ul className="timeline">
+														<li>
+															<div className="timeline-badge dark"></div>
+															<Link className="timeline-panel c-pointer text-muted" to="#">
+																<span>20 minutes ago</span>
+																<h6 className="mb-0">Mashable, a news website and blog, goes live.</h6>
+															</Link>
+														</li>
+														</ul>
+													</td>
+												</tr>
+
+												{/* <ul className="timeline">
+													<li>
+														<div className="timeline-badge primary" />
+														<Link
+														className="timeline-panel c-pointer text-muted"
+														to="#"
+														>
+														<span>10 minutes ago</span>
+														<h6 className="mb-0">
+															Youtube, a video-sharing website, goes live{" "}
+															<strong className="text-primary">$500</strong>.
+														</h6>
+														</Link>
+													</li>
+													<li>
+														<div className="timeline-badge info"></div>
+														<Link
+														className="timeline-panel c-pointer text-muted"
+														to="#"
+														>
+														<span>20 minutes ago</span>
+														<h6 className="mb-0">
+															New order placed{" "}
+															<strong className="text-info">#XF-2356.</strong>
+														</h6>
+														<p className="mb-0">
+															Quisque a consequat ante Sit amet magna at
+															volutapt...
+														</p>
+														</Link>
+													</li>
+													<li>
+														<div className="timeline-badge danger"></div>
+														<Link className="timeline-panel c-pointer text-muted" to="#">
+															<span>30 minutes ago</span>
+															<h6 className="mb-0">
+																john just buy your product{" "}
+																<strong className="text-warning">Sell $250</strong>
+															</h6>
+														</Link>
+													</li>
+													<li>
+														<div className="timeline-badge success"></div>
+														<Link  className="timeline-panel c-pointer text-muted" to="#">
+															<span>15 minutes ago</span>
+															<h6 className="mb-0">
+																StumbleUpon is acquired by eBay.{" "}
+															</h6>
+														</Link>
+													</li>
+														<li>
+															<div className="timeline-badge warning"></div>
+															<Link className="timeline-panel c-pointer text-muted" to="#">
+																<span>20 minutes ago</span>
+																<h6 className="mb-0">Mashable, a news website and blog, goes live.</h6>
+															</Link>
+														</li>
+														<li>
+															<div className="timeline-badge dark"></div>
+															<Link className="timeline-panel c-pointer text-muted" to="#">
+																<span>20 minutes ago</span>
+																<h6 className="mb-0">Mashable, a news website and blog, goes live.</h6>
+															</Link>
+														</li>
+													</ul>
+												 */}
+											</tbody>
+										</table>
+										<div className="d-sm-flex text-center justify-content-between align-items-center mt-3">
+											<div className="dataTables_info">
+												{/* Showing {activePag.current * sort + 1} to{" "}
+												{data.length > (activePag.current + 1) * sort
+													? (activePag.current + 1) * sort
+													: data.length}{" "}
+												of {data.length} entries */}
+												Showing 1 to 5
+											</div>
+											<div
+												className="dataTables_paginate paging_simple_numbers"
+												id="example2_paginate"
+											>
+												<Link
+													className="paginate_button previous disabled"
+													// to="/ticket-management"
+													// onClick={() =>
+													//    activePag.current > 0 &&
+													//    onClick(activePag.current - 1)
+													// }
+												 >
+													<i className="fa fa-angle-double-left" aria-hidden="true"></i>
+												</Link>
+												<span>
+													{paggination.map((number, i) => (
+													   <Link
+														  key={i}
+														//   to="/ticket-management"
+														  className={`paginate_button  ${
+															 activePag.current === i ? "current" : ""
+														  } `}
+														//   onClick={() => onClick(i)}
+													   >
+														  {number}
+													   </Link>
+													))}
+												</span>
+
+												<Link
+													className="paginate_button next"
+													// to="/ticket-management"
+													// onClick={() =>
+													//    activePag.current + 1 < paggination.length &&
+													//    onClick(activePag.current + 1)
+													// }
+												>
+													<i className="fa fa-angle-double-right" aria-hidden="true"></i>
+												</Link>
+											</div>
+										</div>
+										
+									</div>
+								</div>
+							</Tab.Pane>
 							
 						</Tab.Content>
 					</div>
 				</div>	
 			    </Tab.Container>    
                 </div>				
-					
-				
 				
 			</div>	
 			<Modal className="modal fade"  show={postModal} onHide={setPostModal} >
@@ -1439,8 +1681,8 @@ const CompanyProfile = () => {
 				</Modal>
 
 
-				<Modal className="modal fade"  show={resolvedModal} onHide={setResolvedModal} >
-					<Invoice/>
+				<Modal className="modal-invoice"  show={resolvedModal} onHide={setResolvedModal} >
+					<Invoice className="as123s"/>
 				</Modal>
 		</>
 	)
