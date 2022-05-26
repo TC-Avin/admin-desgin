@@ -2023,7 +2023,7 @@ const CompanyManagement = () => {
                                             }}
                                           />
                                           <span style={{ fontSize: "15px" }}>
-                                            Download Invoice
+                                            &nbsp; &nbsp; Download Invoice
                                           </span>
                                         </label>
                                         <label className="radio-inline me-3 d-flex align-items-center">
@@ -2036,7 +2036,7 @@ const CompanyManagement = () => {
                                             }}
                                           />
                                           <span style={{ fontSize: "15px" }}>
-                                            Send Invoice
+                                            &nbsp; &nbsp; Send Invoice
                                           </span>
                                         </label>
                                       </div>
