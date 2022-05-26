@@ -4324,7 +4324,7 @@ textarea.form-control-lg {
 .addcompany-form{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .addcompany-formgroup{

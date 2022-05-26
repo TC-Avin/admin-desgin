@@ -13,30 +13,25 @@ import { ThemeContext } from "../../../context/ThemeContext";
 //import plus from "../../../images/plus.png";
 
 class MM extends Component {
-	  componentDidMount() {
-		this.$el = this.el;
-		this.mm = new Metismenu(this.$el);
-	  }
-	  componentWillUnmount() {
-	  }
-	render() {
-		return (
-			<div className="mm-wrapper">
-				<ul className="metismenu" ref={(el) => (this.el = el)}>
-					{this.props.children}
-				</ul>
-			</div>
-		);
-	}
+  componentDidMount() {
+    this.$el = this.el;
+    this.mm = new Metismenu(this.$el);
+  }
+  componentWillUnmount() {}
+  render() {
+    return (
+      <div className="mm-wrapper">
+        <ul className="metismenu" ref={(el) => (this.el = el)}>
+          {this.props.children}
+        </ul>
+      </div>
+    );
+  }
 }
 
 const SideBar = () => {
-  const {
-    iconHover,
-    sidebarposition,
-    headerposition,
-    sidebarLayout,
-  } = useContext(ThemeContext);
+  const { iconHover, sidebarposition, headerposition, sidebarLayout } =
+    useContext(ThemeContext);
   useEffect(() => {
     var btn = document.querySelector(".nav-control");
     var aaa = document.querySelector("#main-wrapper");
@@ -44,14 +39,13 @@ const SideBar = () => {
       return aaa.classList.toggle("menu-toggle");
     }
     // btn.addEventListener("click", toggleFunc);
-	
-	//sidebar icon Heart blast
-	var handleheartBlast = document.querySelector('.heart');
-        // function heartBlast() {
-        //     return handleheartBlast.classList.toggle("heart-blast");
-        // }
-        // handleheartBlast.addEventListener('click', heartBlast);
-	
+
+    //sidebar icon Heart blast
+    var handleheartBlast = document.querySelector(".heart");
+    // function heartBlast() {
+    //     return handleheartBlast.classList.toggle("heart-blast");
+    // }
+    // handleheartBlast.addEventListener('click', heartBlast);
   }, []);
   let scrollPosition = useScrollPosition();
   /// Path
@@ -69,8 +63,7 @@ const SideBar = () => {
       "reviews",
       "task",
     ],
-    wallet =  [
-      "wallet-management"],
+    wallet = ["wallet-management"],
     app = [
       "app-profile",
       "post-details",
@@ -134,11 +127,7 @@ const SideBar = () => {
       "map-jqvmap",
       "uc-lightgallery",
     ],
-	redux = [
-       "redux-form",
-	   "redux-wizard",    
-       "todo",
-    ],
+    redux = ["redux-form", "redux-wizard", "todo"],
     widget = ["widget-basic"],
     user = ["user-management"],
     ticket = ["ticket-management"],
@@ -185,23 +174,23 @@ const SideBar = () => {
       <PerfectScrollbar className="deznav-scroll">
         <MM className="metismenu" id="menu">
           <li className={`${deshBoard.includes(path) ? "mm-active" : ""}`}>
-            <Link to="/dashboard" className="ai-icon" >
+            <Link to="/dashboard" className="ai-icon">
               <i className="flaticon-025-dashboard"></i>
               <span className="nav-text">Dashboard</span>
             </Link>
           </li>
           <li className={`${wallet.includes(path) ? "mm-active" : ""}`}>
-            <Link to="/wallet-management" className="ai-icon" >
+            <Link to="/wallet-management" className="ai-icon">
               <i className="bi-wallet2"></i>
               <span className="nav-text">Wallet</span>
             </Link>
           </li>
-          <li className={`${ticket.includes(path) ? "mm-active" : ""}`}>
+          {/* <li className={`${ticket.includes(path) ? "mm-active" : ""}`}>
             <Link to="/ticket-management" className="ai-icon" >
               <i className="bi-patch-question-fill"></i>
               <span className="nav-text">Ticket</span>
             </Link>
-          </li>
+          </li> */}
           {/* <li className={`${user.includes(path) ? "mm-active" : ""}`}>
             <Link to="/user-management" className="ai-icon" >
               <i className="flaticon-381-user-8"></i>
@@ -209,39 +198,34 @@ const SideBar = () => {
             </Link>
           </li> */}
           <li className={`${company.includes(path) ? "mm-active" : ""}`}>
-            <Link to="/company-management" className="ai-icon" >
+            <Link to="/company-management" className="ai-icon">
               <i className="flaticon-381-user-8"></i>
               <span className="nav-text">Companies</span>
             </Link>
           </li>
 
-
           <li className={`${category.includes(path) ? "mm-active" : ""}`}>
-            <Link to="/category-management" className="ai-icon" >
+            <Link to="/category-management" className="ai-icon">
               <i className="bi-window-sidebar"></i>
               <span className="nav-text">Category</span>
             </Link>
           </li>
 
           <li className={`${leads.includes(path) ? "mm-active" : ""}`}>
-            <Link to="/upload-leads" className="ai-icon" >
+            <Link to="/upload-leads" className="ai-icon">
               <i className="bi-file-earmark-excel-fill"></i>
               <span className="nav-text">Leads</span>
             </Link>
           </li>
 
-
-          
-          
           <li className={`${widget.includes(path) ? "mm-active" : ""}`}>
-            <Link to="subscription" className="ai-icon" >
+            <Link to="subscription" className="ai-icon">
               <i className="bi-file-plus-fill"></i>
               <span className="nav-text">Subscription</span>
             </Link>
           </li>
-          
         </MM>
-		{/* <div className="copyright">
+        {/* <div className="copyright">
 			<p><strong>Health DBI Admin</strong> © 2022 All Rights Reserved</p>
 			<p className="fs-12">Made with <span className="heart"></span> by Company Name</p>
 		</div> */}
