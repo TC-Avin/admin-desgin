@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 
 /// React router dom
-import {  Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 /// Css
 import "./index.css";
@@ -23,20 +23,19 @@ import Task from "./components/Dashboard/Task";
 import WalletManagement from "./components/WalletManagement/WalletManagement";
 import TicketManagement from "./components/TicketManagement/TicketManagement";
 import UserManagement from "./components/UserManagement/UserManagement";
-import Category from './components/leads/category';
-import UploadLeads from './components/leads';
+import Category from "./components/leads/category";
+import UploadLeads from "./components/leads";
 import CompanyManagement from "./components/CompanyManagement/CompanyManagement";
-import Subscription from './components/subscriptions';
+import Subscription from "./components/subscriptions";
 import CompanyProfile from "./components/CompanyProfile/CompanyProfile";
 
 /////Demo pages
-import Demo1 from './components/Dashboard/Demo/Demo1';
-import Demo2 from './components/Dashboard/Demo/Demo2';
-import Demo3 from './components/Dashboard/Demo/Demo3';
-import Demo4 from './components/Dashboard/Demo/Demo4';
-import Demo5 from './components/Dashboard/Demo/Demo5';
+import Demo1 from "./components/Dashboard/Demo/Demo1";
+import Demo2 from "./components/Dashboard/Demo/Demo2";
+import Demo3 from "./components/Dashboard/Demo/Demo3";
+import Demo4 from "./components/Dashboard/Demo/Demo4";
+import Demo5 from "./components/Dashboard/Demo/Demo5";
 //import Demo6 from './components/Dashboard/Demo/Demo6';
-
 
 /// App
 import AppProfile from "./components/AppsMenu/AppProfile/AppProfile";
@@ -123,6 +122,7 @@ import Error500 from "./pages/Error500";
 import Error503 from "./pages/Error503";
 import Setting from "./layouts/Setting";
 import { ThemeContext } from "../context/ThemeContext";
+import SideBar from "./layouts/nav/SideBar";
 
 const Markup = () => {
   const { menuToggle } = useContext(ThemeContext);
@@ -130,30 +130,32 @@ const Markup = () => {
     /// Dashboard
     { url: "", component: Home },
     { url: "dashboard", component: Home },
-    { url: "wallet-management", component: WalletManagement},
-    { url: "ticket-management", component: TicketManagement},
-    { url: "category-management", component: Category},
-    { url: "upload-leads", component: UploadLeads},
-    { url: "user-management", component: UserManagement},
-    { url: "company-management", component: CompanyManagement},
-    { url: "subscription", component: Subscription},
-    { url: "companyprofile", component: CompanyProfile},
-	  { url: "dashboard-dark", component: DashboardDark },
+    { url: "wallet-management", component: WalletManagement },
+    { url: "ticket-management", component: TicketManagement },
+    { url: "category-management", component: Category },
+    { url: "my-list", component: Category },
+    { url: "upload-leads", component: UploadLeads },
+    { url: "user-management", component: UserManagement },
+    { url: "company-management", component: CompanyManagement },
+    { url: "subscription", component: Subscription },
+    { url: "companyprofile", component: CompanyProfile },
+    { url: "profile", component: CompanyProfile },
+
+    { url: "dashboard-dark", component: DashboardDark },
     { url: "guest-list", component: GuestList },
     { url: "guest-detail", component: GuestDetail },
     { url: "concierge", component: Concierge },
     { url: "room-list", component: Room },
     { url: "reviews", component: Reviews },
     { url: "task", component: Task },
-	
-	///themes 
+
+    ///themes
     { url: "theme1", component: Demo1 },
-	  { url: "theme2", component: Demo2 },
+    { url: "theme2", component: Demo2 },
     { url: "theme3", component: Demo3 },
     { url: "theme4", component: Demo4 },
     { url: "theme5", component: Demo5 },
-   // { url: "theme6", component: Demo6 },
-	
+    // { url: "theme6", component: Demo6 },
 
     /// Apps
     { url: "app-profile", component: AppProfile },
@@ -198,11 +200,11 @@ const Markup = () => {
     { url: "map-jqvmap", component: JqvMap },
     { url: "uc-lightgallery", component: Lightgallery },
 
-	///Redux
-	{ url: "todo", component: Todo },
-	{ url: "redux-form", component: ReduxForm },
+    ///Redux
+    { url: "todo", component: Todo },
+    { url: "redux-form", component: ReduxForm },
     { url: "redux-wizard", component: WizardForm },
-	
+
     /// Widget
     { url: "widget-basic", component: Widget },
 
@@ -224,8 +226,8 @@ const Markup = () => {
     { url: "form-validation-jquery", component: jQueryValidation },
 
     /// table
-	{ url: 'table-filtering', component: FilteringTable },
-    { url: 'table-sorting', component: SortingTable },
+    { url: "table-filtering", component: FilteringTable },
+    { url: "table-sorting", component: SortingTable },
     { url: "table-datatable-basic", component: DataTable },
     { url: "table-bootstrap-basic", component: BootstrapTable },
 
@@ -274,7 +276,6 @@ const Markup = () => {
         </div>
         {!pagePath && <Footer />}
       </div>
-  
     </>
   );
 };

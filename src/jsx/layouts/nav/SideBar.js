@@ -62,8 +62,9 @@ const SideBar = () => {
       "room-list",
       "reviews",
       "task",
+      "Home",
     ],
-    wallet = ["wallet-management"],
+    wallet = ["wallet-management", "contact-search"],
     app = [
       "app-profile",
       "post-details",
@@ -176,15 +177,47 @@ const SideBar = () => {
           <li className={`${deshBoard.includes(path) ? "mm-active" : ""}`}>
             <Link to="/dashboard" className="ai-icon">
               <i className="flaticon-025-dashboard"></i>
-              <span className="nav-text">Dashboard</span>
+              <span className="nav-text">Home</span>
             </Link>
           </li>
-          <li className={`${wallet.includes(path) ? "mm-active" : ""}`}>
+          {/* <li className={`${wallet.includes(path) ? "mm-active" : ""}`}>
             <Link to="/wallet-management" className="ai-icon">
               <i className="bi-wallet2"></i>
               <span className="nav-text">Wallet</span>
             </Link>
-          </li>
+          </li> */}
+          <li
+            className={`${"contact-search".includes(path) ? "mm-active" : ""}`}
+          >
+            <Link to="/contact-search" className="ai-icon">
+              <i className="bi-wallet2"></i>
+              <span className="nav-text">Contact-serch</span>
+            </Link>
+          </li>{" "}
+          <li className={`${"my-list".includes(path) ? "mm-active" : ""}`}>
+            <Link to="/my-list" className="ai-icon">
+              <i className="bi-wallet2"></i>
+              <span className="nav-text">My List</span>
+            </Link>
+          </li>{" "}
+          <li className={`${"look-up".includes(path) ? "mm-active" : ""}`}>
+            <Link to="/look-up" className="ai-icon">
+              <i className="bi-wallet2"></i>
+              <span className="nav-text">Look-up </span>
+            </Link>
+          </li>{" "}
+          <li className={`${"verify".includes(path) ? "mm-active" : ""}`}>
+            <Link to="/verify " className="ai-icon">
+              <i className="bi-wallet2"></i>
+              <span className="nav-text">Verify</span>
+            </Link>
+          </li>{" "}
+          <li className={`${"profile".includes(path) ? "mm-active" : ""}`}>
+            <Link to="/profile " className="ai-icon">
+              <i className="bi-wallet2"></i>
+              <span className="nav-text">Hey Jhon</span>
+            </Link>
+          </li>{" "}
           {/* <li className={`${ticket.includes(path) ? "mm-active" : ""}`}>
             <Link to="/ticket-management" className="ai-icon" >
               <i className="bi-patch-question-fill"></i>
@@ -203,21 +236,18 @@ const SideBar = () => {
               <span className="nav-text">Companies</span>
             </Link>
           </li>
-
           <li className={`${category.includes(path) ? "mm-active" : ""}`}>
             <Link to="/category-management" className="ai-icon">
               <i className="bi-window-sidebar"></i>
               <span className="nav-text">Category</span>
             </Link>
           </li>
-
           <li className={`${leads.includes(path) ? "mm-active" : ""}`}>
             <Link to="/upload-leads" className="ai-icon">
               <i className="bi-file-earmark-excel-fill"></i>
               <span className="nav-text">Leads</span>
             </Link>
           </li>
-
           <li className={`${widget.includes(path) ? "mm-active" : ""}`}>
             <Link to="subscription" className="ai-icon">
               <i className="bi-file-plus-fill"></i>
