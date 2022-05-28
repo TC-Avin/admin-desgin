@@ -201,13 +201,13 @@ const SideBar = () => {
             </Link>
           </li>{" "}
           <li className={`${"look-up".includes(path) ? "mm-active" : ""}`}>
-            <Link to="/look-up" className="ai-icon">
-              <i className="bi-wallet2"></i>
-              <span className="nav-text">Look-up </span>
+            <Link to="/lookup-management" className="ai-icon">
+              <i className="flaticon-381-search-2"></i>
+              <span className="nav-text">Look-up</span>
             </Link>
           </li>{" "}
           <li className={`${"verify".includes(path) ? "mm-active" : ""}`}>
-            <Link to="/verify " className="ai-icon">
+            <Link to="/verify" className="ai-icon">
               <i className="bi-wallet2"></i>
               <span className="nav-text">Verify</span>
             </Link>

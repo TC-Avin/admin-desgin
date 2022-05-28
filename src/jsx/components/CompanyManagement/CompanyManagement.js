@@ -2084,8 +2084,8 @@ const CompanyManagement = () => {
                 </div>
               </div>
               {/* <div className="modal-footer"> 
-                                <button type="button" className="btn btn-primary"> Save</button> 
-                                    <button type="button" onClick={()=> setaddCompanyModal(false)} className="btn btn-danger"> <i className="flaticon-delete-1"></i> Close</button>      
+                    <button type="button" className="btn btn-primary"> Save</button> 
+                    <button type="button" onClick={()=> setaddCompanyModal(false)} className="btn btn-danger"> <i className="flaticon-delete-1"></i> Close</button>      
 								</div> */}
             </form>
           </div>

@@ -9,6 +9,7 @@ const RoundButton = (props) => {
         <Button className="me-2" variant="outline-primary btn-rounded">
           {props.icon && <span className="mx-3">{props.icon}</span>}{" "}
           {props.data}
+          {props.children}
         </Button>
       </div>
     </div>

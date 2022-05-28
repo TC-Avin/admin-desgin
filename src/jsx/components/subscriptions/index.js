@@ -10,6 +10,7 @@ import card1 from './sub-1.jpg';
 import card2 from './sub-2.jpg';
 import user from '../../../images/task/user.jpg';
 import AccessblitySelect from './AccessblitySelect';
+import Billpayment from "../../comman/BillPayment"
 
 const PackageList = [
 	{ 
@@ -52,6 +53,7 @@ const AllSubscriptions = () => {
 
 	
     const [postModal, setPostModal] = useState(false);
+    const [BillPaymentModal, setBillPaymentModal] = useState(false);
     const [contacts, setContacts] = useState(PackageList);
     // delete data  
     const handleDeleteClick = (contactId) => {
@@ -338,6 +340,17 @@ const AllSubscriptions = () => {
 						</div>
 					</div>
 				</Modal>
+
+
+
+
+                <Modal className="modal-addCompany"  show={BillPaymentModal} onHide={setBillPaymentModal} size="lg" >
+                    <Billpayment/>
+				</Modal>
+
+
+
+
                 <Modal className="modal fade"  show={editModal} onHide={setEditModal} size={'lg'} >
 					<div className="" role="document">
 						<div className="">
@@ -508,7 +521,11 @@ const AllSubscriptions = () => {
                                     <div className="text-dark fs-14 text-nowrap"><i className="fa fa-calendar me-3" aria-hidden="true"></i>
                                         Created on May 8th, 2022
                                     </div>
+                                    <div>
+                                        <Link className="btn btn-primary font-w600 me-auto" style={{width:"100%",padding:"10px",marginLeft:"15px",marginTop:"15px"}} onClick={()=> setBillPaymentModal(true)}>Payment</Link>
+                                    </div>
                                 </div>
+                                
                                 <Dropdown className="">
                                     <Dropdown.Toggle variant="" as="div" className="btn-link i-false" >	
                                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

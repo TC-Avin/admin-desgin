@@ -21,7 +21,12 @@ import Room from "./components/Dashboard/Room";
 import Reviews from "./components/Dashboard/Reviews";
 import Task from "./components/Dashboard/Task";
 import WalletManagement from "./components/WalletManagement/WalletManagement";
+import LookupManagement from "./components/LookupManagement/LookupManagement";
 import TicketManagement from "./components/TicketManagement/TicketManagement";
+import ContactManagement from "./components/ContactSearchManagement/ContactSearchManagement";
+
+// import Verify from "./components/VerifyManagement/VerifyManagement";
+import Verify from './components/Verify/Verify';
 import UserManagement from "./components/UserManagement/UserManagement";
 import Category from "./components/leads/category";
 import UploadLeads from "./components/leads";
@@ -131,7 +136,12 @@ const Markup = () => {
     { url: "", component: Home },
     { url: "dashboard", component: Home },
     { url: "wallet-management", component: WalletManagement },
+    { url: "lookup-management", component: LookupManagement},
     { url: "ticket-management", component: TicketManagement },
+    { url: "contact-search", component: ContactManagement },
+
+
+    { url: "verify", component: Verify },
     { url: "category-management", component: Category },
     { url: "my-list", component: Category },
     { url: "upload-leads", component: UploadLeads },
@@ -257,7 +267,7 @@ const Markup = () => {
       >
         {!pagePath && <Nav />}
 
-        <div className={`${!pagePath ? "content-body" : ""}`}>
+        <div className={`${!pagePath ? "content-body" : ""}`} style={{marginLeft:"0%"}}>
           <div
             className={`${!pagePath ? "container-fluid" : ""}`}
             style={{ minHeight: window.screen.height - 60 }}

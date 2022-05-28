@@ -14,11 +14,11 @@ const DropDown = (props) => {
       {" "}
       <Dropdown>
         <Dropdown.Toggle variant="primary">
-          {props.title || "Dummy"}
+          {props.children}
         </Dropdown.Toggle>
         <Dropdown.Menu>
           {(props.data || ["1", "2"]).map((d) => {
-            return( <Dropdown.Item href="#">{d}</Dropdown.Item>;)
+            return( <Dropdown.Item href="#">{d}</Dropdown.Item>)
           })}
         </Dropdown.Menu>
       </Dropdown>

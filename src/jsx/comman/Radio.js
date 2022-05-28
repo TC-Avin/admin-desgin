@@ -5,7 +5,7 @@ const Radio = (props) => {
     <div>
       {" "}
       <div className="form-group mb-0">
-        {(props.data || ["1", ""]).map((d) => {
+        {(props.data || ["1", "2"]).map((d) => {
           return (
             <div className="radio">
               <label>

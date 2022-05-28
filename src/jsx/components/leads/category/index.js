@@ -55,7 +55,7 @@ const Category = () => {
               className="btn btn-primary"
               onClick={() => setBasicModal(true)}
             >
-              <i className="fa fa-plus"></i> Add Category
+              <i className="fa fa-plus"></i> Add List
             </a>
           </div>
         </div>
@@ -211,7 +211,7 @@ const Category = () => {
       {/* <!-- Modal --> */}
       <Modal className="fade" show={basicModal}>
         <Modal.Header>
-          <Modal.Title>Add Category</Modal.Title>
+          <Modal.Title>Add List</Modal.Title>
           <Button
             variant=""
             className="btn-close"
@@ -222,11 +222,11 @@ const Category = () => {
           <form action={"#!"} className="category-form" id="add-cat-form">
             <div className="form-group">
               <label htmlFor="" className="form-label">
-                Category Title
+                List Title
               </label>
               <input
                 type="text"
-                placeholder="Category Title Here..."
+                placeholder="List Title Here..."
                 className="form-control"
                 required
               />
@@ -238,14 +238,14 @@ const Category = () => {
             Close
           </Button>
           <Button form={"add-cat-form"} variant="primary">
-            Save Category
+            Save List
           </Button>
         </Modal.Footer>
       </Modal>
 
       <Modal className="fade" show={editModal}>
         <Modal.Header>
-          <Modal.Title>Add Category</Modal.Title>
+          <Modal.Title>Add List</Modal.Title>
           <Button
             variant=""
             className="btn-close"
